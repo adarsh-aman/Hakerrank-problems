@@ -1,0 +1,20 @@
+function minimumSwaps(arr) {
+        //let arr1 = arr;
+  let count=0;
+    while(arr.length >= 1){
+        let minVal = Math.min(...arr);
+    let minIndex = arr.indexOf(minVal);
+    if(minIndex !== 0){
+        let temp = arr[0];
+      arr[0] = minVal;
+      arr[minIndex] = temp;
+      arr.splice(0,1);
+      count++;
+    }else{
+    arr.splice(0,1);
+    }
+    }
+  
+return count;
+
+}
